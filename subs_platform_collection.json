@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "3ff6748c-1839-40bf-adf1-94c0c10bed3a",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/api/create_newsletter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "website_id",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "world class",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "huhu",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "yahooo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api/create_newsletter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"create_newsletter"
+					]
+				},
+				"description": "create newsletter"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/subscribe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "website_id",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "abu",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "abu@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/api/subscribe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"subscribe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/api/prepare_send_newsletter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/api/prepare_send_newsletter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"prepare_send_newsletter"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
