@@ -9,6 +9,7 @@ use App\Models\subscriber;
 use App\Models\email_history;
 
 use Mail;
+use Carbon;
 
 class SendEmailController extends Controller
 {
@@ -36,6 +37,8 @@ class SendEmailController extends Controller
                         \App\Jobs\SendEmail::dispatch($email_history->id);
                     }
                 }
+
+                newsletter::where('id', $newsletter['id'])->update(['status' => 'COMPLETE']);
             }
             
         }
@@ -57,6 +60,8 @@ class SendEmailController extends Controller
                 $message->to($subscriber->email, $subscriber->name)->subject($newsletter->title);
                 $message->from('syahiranahmad@gmail.com','Ahmad Syahiran');
             });
+
+            email_history::where('id', $id)->update(['status' => 'COMPLETE', 'send_at' => \Carbon\Carbon::now()]);
         }
         
     }
